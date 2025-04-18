@@ -4,7 +4,6 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false);

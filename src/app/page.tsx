@@ -1,7 +1,5 @@
 "use client";
 
-import ClientLayout from "../components/ClientLayout";
-
 // src/app/page.tsx
 export default function Home() {
   return (

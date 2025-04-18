@@ -1,0 +1,187 @@
+/* ==================== 폰트 설정 ==================== */
+@font-face {
+  font-family: "ONE-Mobile-POP";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KyoboHand";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ==================== Reset & 기본 설정 ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #f5f5f5;
+  color: #222;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ==================== 링크 ==================== */
+a {
+  color: #0055aa;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==================== 전체 레이아웃 ==================== */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==================== 헤더 ==================== */
+.header {
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  max-width: none;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.nav a {
+  margin-left: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+.nav a:hover {
+  color: #0055aa;
+}
+
+/* ==================== 메인 ==================== */
+main {
+  flex: 1;
+  max-width: 768px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ==================== 푸터 ==================== */
+.footer {
+  background-color: #eaeaea;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #666;
+  border-top: 1px solid #ccc;
+}
+
+/* ==================== 인트로 ==================== */
+.home-hero {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 15vh;
+  min-height: 100vh;
+  background-color: transparent; /* 불필요한 흰 배경 제거 */
+}
+
+.hero-text {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* 인트로 타이틀 */
+.hi-title,
+.hi-sub {
+  font-family: "ONE-Mobile-POP", sans-serif;
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  color: #222;
+}
+
+/* 구분선 */
+.divider {
+  width: 100px;
+  height: 1px;
+  border: none;
+  background: #aaa;
+  margin: 2rem auto 1rem auto; /* ← 위 간격 더 넓힘 */
+}
+
+/* 손글씨 스타일 문장 */
+.hero-description {
+  font-family: "KyoboHand", sans-serif;
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 1rem;
+}
+
+/*-----------------------------------*/
+.menu-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 0; /* 왼쪽으로 더 붙이고 싶으면 이 값 조절 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-svg svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+/*-----------------------------------*/
+.center-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "ONE-Mobile-POP", sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.logo-svg svg {
+  display: block;
+}
+
+/*-----------------------------------*/
+.github-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+}
+.github-icon:hover {
+  transform: scale(1.1);
+}

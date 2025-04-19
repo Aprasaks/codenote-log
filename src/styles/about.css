@@ -1,0 +1,99 @@
+/* 전체 페이지 컨테이너 */
+.about-container {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* 공통 섹션 제목 */
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ccc;
+  text-align: center;
+  color: #222;
+}
+
+/* 공통 본문 텍스트 */
+.intro-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: center;
+}
+
+/* 기술 스택 리스트 */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.skills-list li {
+  background-color: #eef1f8;
+  color: #333;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #dbe1ea;
+  transition: background-color 0.2s ease;
+}
+
+.skills-list li:hover {
+  background-color: #d9e3f1;
+}
+
+/* 프로젝트 리스트 */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* 각 프로젝트 카드 */
+.project-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 280px;
+  transition: 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.project-card a {
+  color: #4a7de4;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}

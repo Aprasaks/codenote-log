@@ -1,4 +1,3 @@
-// src/components/ClientLayout.tsx
 "use client";
 
 import { useState } from "react";
@@ -7,16 +6,26 @@ import Link from "next/link";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [isSearchOpen, setSearchOpen] = useState(false);
+  const [searchKeyword, setSearchKeyword] = useState("");
 
   return (
     <div className="layout">
-      <Sidebar isOpen={isSidebarOpen} onClose={() => setSidebarOpen(false)} />
+      {/* 사이드바 */}
+      <Sidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+        onMouseLeave={() => setSidebarOpen(false)}
+      />
 
+      {/* 상단 헤더 */}
       <header className="header">
         <div className="header-inner">
-          <button className="menu-button" onClick={() => setSidebarOpen(true)}>
+          {/* 메뉴 버튼 */}
+          <button className="menu-button" onMouseEnter={() => setSidebarOpen(true)}>
             <span className="icon-svg" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+              {/* 사이드바 아이콘 */}
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16">
                 <path
                   fill="none"
                   stroke="#8aadf4"
@@ -29,10 +38,10 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             </span>
           </button>
 
-          {/* 가운데 로고 영역 */}
+          {/* 중앙 로고 */}
           <div className="center-logo">
             <span className="logo-svg" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16">
                 <path
                   fill="none"
                   stroke="#9ca7ff"
@@ -46,25 +55,40 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             <span className="logo-text">CodeNote</span>
           </div>
 
+          {/* 우측 아이콘 */}
           <nav className="nav">
-            <Link href="/posts">글 목록</Link>
+            {/* 🔍 검색 아이콘 */}
+            <button className="search-button" onClick={() => setSearchOpen((prev) => !prev)}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16">
+                <path
+                  fill="none"
+                  stroke="#cad3f5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12.5 6.5a6 6 0 0 1-6 6a6 6 0 0 1-6-6a6 6 0 0 1 6-6a6 6 0 0 1 6 6m3 9L11 11"
+                  strokeWidth="1.6"
+                />
+              </svg>
+            </button>
+
             <a
               href="https://github.com/Aprasaks"
               target="_blank"
               className="github-icon"
               aria-label="GitHub"
             >
+              {/* GitHub 아이콘 */}
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16">
                 <g fill="none" strokeLinecap="round" strokeLinejoin="round">
                   <path
                     stroke="#cad3f5"
-                    d="M8.5 10.5a1 1 0 0 1-1 1a1 1 0 0 1-1-1a1 1 0 0 1 1-1a1 1 0 0 1 1 1m0-6a1 1 0 0 1-1 1a1 1 0 0 1-1-1a1 1 0 0 1 1-1a1 1 0 0 1 1 1m3 3a1 1 0 0 1-1 1a1 1 0 0 1-1-1a1 1 0 0 1 1-1a1 1 0 0 1 1 1m-4-2v4m-1-6l-1-1m4 4l-1-1"
-                    strokeWidth="1"
+                    d="M4.5 4.5H12A1.5 1.5 0 0 1 13.5 6v.5m-7.5 7H2A1.5 1.5 0 0 1 .5 12V3.5a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v1"
+                    strokeWidth="1.6"
                   />
                   <path
-                    stroke="#f5a97f"
-                    d="m9.06 1.06l5.88 5.88a1.5 1.5 0 0 1 0 2.12l-5.88 5.88a1.5 1.5 0 0 1-2.12 0L1.06 9.06a1.5 1.5 0 0 1 0-2.12l5.88-5.88a1.5 1.5 0 0 1 2.12 0"
-                    strokeWidth="1"
+                    stroke="#8087a2"
+                    d="M10 14.907c-1.5.5-1.25-.657-2-.907m5 1.5v-1.062c0-.447-.238-.67-.5-.938c1.225-.134 2.5-.58 2.5-2.633c0-.534-.205-.965-.569-1.348a1.9 1.9 0 0 0-.043-1.428s-.482-.134-1.532.58a5.3 5.3 0 0 0-2.712 0c-1.05-.714-1.531-.58-1.531-.58a1.9 1.9 0 0 0-.044 1.428c-.364.383-.568.814-.569 1.348c0 2.053 1.275 2.5 2.5 2.633c-.262.268-.544.58-.5.938V15.5"
+                    strokeWidth="1.6"
                   />
                 </g>
               </svg>
@@ -73,8 +97,36 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         </div>
       </header>
 
-      <main>{children}</main>
+      {/* 🔍 검색창 오버레이 */}
+      {isSearchOpen && (
+        <div className="search-popup">
+          <div className="search-input-wrapper">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M12.5 6.5a6 6 0 1 1-6-6a6 6 0 0 1 6 6m3 9L11 11"
+                stroke="#cad3f5"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <input
+              type="text"
+              placeholder="포스트를 검색해보세요"
+              className="search-input"
+              autoFocus
+            />
+          </div>
+        </div>
+      )}
 
+      <main>{children}</main>
       <footer className="footer">© 2025. Created by Kanghyeok.</footer>
     </div>
   );

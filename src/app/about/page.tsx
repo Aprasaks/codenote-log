@@ -20,10 +20,10 @@ export default function AboutPage() {
       <section className="intro-section">
         <h2 className="section-title">🌱 나의 이야기</h2>
         <p className="intro-text">
-          개발을 처음 시작했을 때는 단순히 "웹사이트를 만들어보고 싶다"는 호기심에서 출발했습니다.
+          개발을 처음 시작했을 때는 단순히 웹사이트를 만들어보고 싶다는 호기심에서 출발했습니다.
           <br />
           하지만 점차 게임 커뮤니티, 포털, 상점 UI를 보며
-          <strong>“이걸 내가 만들 수 있을까?”</strong>라는 생각이 들었고, 그때부터 게임 프론트엔드
+          <strong>이걸 내가 만들 수 있을까?</strong>라는 생각이 들었고, 그때부터 게임 프론트엔드
           개발자를 목표로 공부를 시작하게 되었습니다.
           <br />
           지금은 하루하루 배운 것을 기록하고, 작더라도 직접 만들어보는 것에서 큰 보람을 느끼고

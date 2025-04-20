@@ -2,12 +2,10 @@
 
 import { useState } from "react";
 import Sidebar from "./Sidebar";
-import Link from "next/link";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
-  const [searchKeyword, setSearchKeyword] = useState("");
 
   return (
     <div className="layout">

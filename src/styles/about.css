@@ -97,3 +97,46 @@
 .project-card a:hover {
   text-decoration: underline;
 }
+
+/* ================= 반응형 스타일 ================= */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1.5rem 1rem;
+    gap: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 0.95rem;
+  }
+
+  .skills-list {
+    gap: 0.5rem;
+  }
+
+  .skills-list li {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .project-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}

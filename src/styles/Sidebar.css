@@ -41,3 +41,37 @@
 .menu a:hover {
   color: #0055aa;
 }
+
+/* ==================== 반응형 ==================== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .close-btn {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .profile h3 {
+    font-size: 1.1rem;
+  }
+
+  .profile p {
+    font-size: 0.95rem;
+    color: #666;
+  }
+
+  .menu a {
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    text-align: center;
+  }
+}

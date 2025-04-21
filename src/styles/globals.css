@@ -250,3 +250,63 @@ main {
     transform: translateY(0);
   }
 }
+
+/* ==================== 반응형 ==================== */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .center-logo {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  main {
+    padding: 0 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .hi-title,
+  .hi-sub {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .divider {
+    margin: 1.5rem auto;
+  }
+
+  .search-popup {
+    top: 60px;
+    right: 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .search-input-wrapper {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 0.8rem;
+    font-size: 0.75rem;
+  }
+}
